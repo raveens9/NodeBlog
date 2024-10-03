@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --black:#1c1c1c;
+    --gray:#7E7E7E;
+    --gray-light:#E4E4E4;
+    --red: #b30000;
+    --font-size-base: 1rem;    
+    --font-size-md: clamp(1.25rem, 2vw, 1.5rem);
+    --font-size-lg: clamp(1.75rem, 3vw, 2.25rem);
+    --font-size-xl: clamp(2.25rem, 4vw, 3rem);
+    --border-radius: 10px;
+}
+
+body{
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--black);
+    font-size: var(--font-size-base);
+    background-color: #FAF5EE;
+    margin: 10;
+}
+
+a{
+    color: black;
+}
+
+h1{
+    font-size: var(--font-size-xl);
+}
+
+h2{
+    font-size: var(--font-size-lg);
+}
+
+h3{
+    font-size: var(--font-size-md);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea{
+    font-family: "Yantramanav", sans-serif;
+    font-size: var(--font-size-base);
+    display: block;
+    box-sizing:  border-box;
+}
+
+.btn{
+    background-color: var(--black);
+    border: none;
+    color: var(--gray-light);
+    padding: 16px 16px;
+    cursor: pointer;
+}
+
+.btn-delete{
+    background-color: var(--red);
+    padding: 16px 16px;
+}
+
+img{
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 982px; 
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+.main{
+    padding: 20px;
+}
+
+.Image{
+    filter: drop-shadow(0px 30px 40px rgba(0,0,0,0.25));
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.header{
+    background-color: var(--gray-light);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "logo button"
+    "menu menu"
+    ;
+}
+
+@media only screen and (min-width:768px){
+    .header{
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+        "logo menu button";
+    }
+}
+
+.header__logo{
+    grid-area: logo;
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.header__logo:hover{
+    text-decoration:underline;
+}
+
+.header__nav{
+    grid-area: menu;
+    display: flex;
+    justify-content: center;
+}
+
+.header__button{
+    display: flex;
+    grid-area: "button";
+    justify-content: end;
+}
+
+.header__button button{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    border: 0;
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    border: 2 px solid transparent;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--black);
+}
+
+.header__button button:hover{
+    border: 2 px solid var(--black);
+    cursor: pointer;
+}
+
+.header__nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    font-weight: 400;
+    padding: 0;
+}
+
+.header__nav ul a{
+    padding: 20px;
+    text-decoration: none;
+}
+
+.header__nav ul a:hover{
+    text-decoration: underline;
+}
+
+.header__nav ul a:active{
+    color: var(--gray);
+}
+
+.author{
+    padding: 10px 0;
+    text-align: center;
+}
+
+.Author{
+    margin-top:10px ;
+    margin-bottom: 5px;
+}
+
+.Author Body{
+    font-size: var(--font-size-md);
+    margin: 5px 0 40px 0;
+}
+
+.articles__heading{
+    margin-top: 4rem;
+    font-weight: 400;
+}
+
+.article_ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1.1rem,cal(1.08rem+0.22vw),1.25rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.article_ul li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    margin: 18px 0px;
+}
+
+.article__date{
+    font-size: var(--font-size-base);
+    color: var(--gray);
+    width: 260px;
+    display: inline-block;
+}
+
+@media only screen and (min-width:768px){
+    .article_ul li a{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .article__date{
+        text-align: right;
+    }
+}
