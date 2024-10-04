@@ -64,7 +64,7 @@ textarea{
 }
 
 img{
-    width: 80%;
+    width: 40%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -205,13 +205,6 @@ img{
     margin: 18px 0px;
 }
 
-.article__date{
-    font-size: var(--font-size-base);
-    color: var(--gray);
-    width: 260px;
-    display: inline-block;
-}
-
 @media only screen and (min-width:768px){
     .article_ul li a{
         flex-direction: row;
@@ -221,4 +214,57 @@ img{
     .article__date{
         text-align: right;
     }
+}
+
+.article_ul li{
+    font-size: 24;
+    cursor: pointer;
+    transition: filter 0.1s;
+}
+
+.article_ul li:not(:last-child){
+    border-bottom: solid var(--gray-light);
+}
+
+.article_ul li:hover{
+    filter: none;
+}
+
+/* Apply blur to all list items when the UL is hovered */
+.article_ul:hover li {
+    filter: blur(3px);
+}
+
+/* Remove blur from the hovered list item */
+.article_ul:hover li:hover {
+    filter: none;
+}
+
+
+.article__date{
+    font-size: var(--font-size-base);
+    color: var(--gray);
+    width: 260px;
+    display: inline-block;
+}
+
+.articles{
+    white-space: pre-wrap;
+}
+
+.pagination{
+    font-size: var(--font-size-md);
+    text-decoration: none;
+    color: var(--gray);
+    margin-top: 40px;
+    margin-left: none;
+}
+
+.pagination:hover{
+    color: var(--black);
+}
+
+.footer{
+    margin: 4rem auto;
+    text-align: center;
 }
